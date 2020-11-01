@@ -11,6 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        // 順番関係あり｡一番初めにカテゴリがなかったりすると検索できない
+        $this->call(CategoryTableSeeder::class);
         $this->call(RestaurantTableSeeder::class);
     }
 }
