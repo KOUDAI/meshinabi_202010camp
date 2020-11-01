@@ -23,7 +23,7 @@ class RestaurantController extends Controller
             $q->where('name', 'like', '%' . $category . '%');
         });
         }
-        $restaurants = $query->simplePaginate(10);
+        $restaurants = $query->simplePaginate(5);
         $restaurants->appends(compact('name', 'category'));
         // appendsは配列の最後尾に追加するときに使う
         return view('restaurants.index', compact('restaurants'));
